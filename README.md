@@ -2,7 +2,7 @@
 
 Inline comments for the [Lexxy](https://lexxy.dev) rich text editor, built on its [extensions API](https://lexxy.dev/docs/extensions.html). The editor marks the commented text; your Rails app stores the comments.
 
-The gem also ships two smaller extensions: a read-only comment mode, and superscript/subscript toolbar buttons.
+It also ships a read-only comment mode, for editors meant only for commenting.
 
 ## How it works
 
@@ -50,11 +50,11 @@ Register the extensions:
 
 ```js
 import * as Lexxy from "lexxy"
-import { CommentModeExtension, CommentsExtension, ScriptFormatExtension } from "lexxy-comments"
+import { CommentModeExtension, CommentsExtension } from "lexxy-comments"
 
 Lexxy.configure({
   global: {
-    extensions: [ CommentsExtension, CommentModeExtension, ScriptFormatExtension ]
+    extensions: [ CommentsExtension, CommentModeExtension ]
   }
 })
 ```
@@ -98,10 +98,6 @@ Lexxy.configure({
 ```erb
 <%= form.rich_text_area :body, preset: "commenting", data: { comment_mode: "true" } %>
 ```
-
-### Superscript and subscript
-
-`ScriptFormatExtension` adds superscript and subscript buttons after the bold button, in every rich text editor.
 
 ## Events
 
