@@ -32,11 +32,11 @@ The extensions use Lexical only through `Lexxy.Lexical`, so they always run agai
 
 ## Installation
 
-The gem isn't published yet; use a local checkout or a git source:
+The gem isn't on RubyGems; install it from GitHub:
 
 ```ruby
 # Gemfile
-gem "lexxy-comments", path: "../lexxy-comments"
+gem "lexxy-comments", git: "https://github.com/z-of-nz/lexxy-comments.git", branch: "main"
 ```
 
 The gem adds its modules to your importmap. Pin Lexxy as `lexxy` if you haven't already:
