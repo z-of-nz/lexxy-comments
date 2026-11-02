@@ -1,0 +1,36 @@
+:root {
+  --lexxy-comment-mark-color: rgb(255 212 0);
+}
+
+:where(mark[data-comment-sgid], mark[data-comment-group]) {
+  background-color: transparent;
+  color: inherit;
+  border-block-end: 2px solid var(--lexxy-comment-mark-color);
+}
+
+:where(mark[data-comment-delete]) {
+  border-block-end-style: dashed;
+  opacity: 0.6;
+}
+
+:where(.lexxy-editor__toolbar-dropdown--comment) {
+  .lexxy-editor__toolbar-dropdown-actions {
+    display: flex;
+    flex: 1 1 0%;
+    gap: 1ch;
+    font-size: var(--lexxy-text-small);
+    margin-block-start: 1ch;
+  }
+
+  button[type="submit"] {
+    inline-size: 100%;
+    justify-content: center;
+    background-color: var(--lexxy-color-accent-dark);
+    color: var(--lexxy-color-ink-inverted);
+    line-height: 1.5lh;
+  }
+
+  textarea {
+    padding: 0.5rem;
+  }
+}
