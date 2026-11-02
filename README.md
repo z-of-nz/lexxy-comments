@@ -158,15 +158,3 @@ ActiveSupport.on_load(:action_text_content) do
     %w[ data-comment-sgid data-comment-group data-comment-create data-comment-delete ]
 end
 ```
-
-## Migrating from `<action-text-attachment-mark-node>`
-
-Content written by the earlier Lexxy fork wraps comments in `<action-text-attachment-mark-node sgid="…">`. The editor still reads that tag and saves it back as `<mark>`, but stored content should be migrated so rendered pages and server code only see one format:
-
-| Old attribute              | New attribute         |
-|----------------------------|-----------------------|
-| `sgid`                     | `data-comment-sgid`   |
-| `data-selection-group`     | `data-comment-group`  |
-| `data-create-meta-content` | `data-comment-create` |
-| `data-delete-meta-content` | `data-comment-delete` |
-| `content-type`             | (dropped)             |
