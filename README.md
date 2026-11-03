@@ -138,10 +138,11 @@ fragment.css("mark[data-comment-group]").group_by { |mark| mark["data-comment-gr
   end
 end
 
-fragment.css("mark[data-comment-delete]").each do |mark|
-  ActionText::Attachable.from_attachable_sgid(mark["data-comment-sgid"])&.destroy
-  mark.replace(mark.children)
-end
+deletion_nodes = fragment.css("mark[data-comment-delete]")
+deleted_sgids = deletion_nodes.map { |node| node["data-comment-sgid"] }.compact.uniq
+GlobalID::Locator.locate_many_signed(deleted_sgids, for: ActionText::Attachable::LOCATOR_NAME, only: Comment, ignore_missing: true).each(&:destroy)
+
+deletion_nodes.each { |node| node.replace(node.children) }
 
 fragment.to_html
 ```
