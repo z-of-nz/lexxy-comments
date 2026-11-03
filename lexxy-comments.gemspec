@@ -3,7 +3,7 @@ require_relative "lib/lexxy/comments/version"
 Gem::Specification.new do |spec|
   spec.name        = "lexxy-comments"
   spec.version     = Lexxy::Comments::VERSION
-  spec.authors     = [ "fabian" ]
+  spec.authors     = [ "z-of-nz" ]
   spec.email       = [ "fabian@nz.systems" ]
   spec.summary     = "Inline comments for the Lexxy rich text editor, stored by your Rails app"
   spec.description = "Lexxy extensions that wrap commented text in <mark> elements and leave storing the comments to the host application. Also ships a read-only comment mode."

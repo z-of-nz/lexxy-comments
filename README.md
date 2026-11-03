@@ -1,8 +1,12 @@
 # lexxy-comments
 
+![Lexxy Inline Comments](assets/images/screenshot.png "Lexxy Inline Comments")
+
 Inline comments for the [Lexxy](https://lexxy.dev) rich text editor, built on its [extensions API](https://lexxy.dev/docs/extensions.html). The editor marks the commented text; your Rails app stores the comments.
 
 It also ships a read-only comment mode, for editors meant only for commenting.
+
+JS/CSS for showing comments not included.
 
 ## How it works
 
